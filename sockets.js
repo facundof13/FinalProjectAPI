@@ -6,7 +6,7 @@ const db = require('./mysql');
 module.exports = async (server) => {
 
     io = new Server(server, {
-        cors: { origin: 'http://localhost:4200', methods: ['GET', 'POST'] }
+        cors: { origin: process.env.URL, methods: ['GET', 'POST'] }
     });
 
     io.on('connection', async (socket) => {
